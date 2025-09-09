@@ -18,3 +18,13 @@ spec:
           ports:
             - containerPort: 80
 
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: echo-server  
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: echo-server

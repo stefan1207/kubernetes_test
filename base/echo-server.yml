@@ -17,6 +17,12 @@ spec:
           image: ealen/echo-server
           ports:
             - containerPort: 80
+          env:
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: environment-config
+                  key: ENVIRONMENT
 
 ---
 apiVersion: v1

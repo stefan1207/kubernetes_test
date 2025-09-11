@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: environment-config
 data:
-  ENVIRONMENT: "stage"
+  ENVIRONMENT: "test"

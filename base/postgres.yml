@@ -61,7 +61,7 @@ spec:
               mountPath: /var/lib/postgresql/data
   volumeClaimTemplates:
     - metadata:
-      name: postgres-data
+        name: postgres-data
       spec:
         accessModes: [ "ReadWriteOnce" ]
         storageClassName: "manual"

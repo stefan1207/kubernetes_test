@@ -17,22 +17,22 @@ spec:
     path: "/mnt/data"
 
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-  labels:
-    app: postgres
-spec:
-  selector:
-    matchLabels:
-      app: postgres
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: manual
-  resources:
-    requests:
-      storage: 10Gi
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: postgres-pvc
+#  labels:
+#    app: postgres
+#spec:
+#  selector:
+#    matchLabels:
+#      app: postgres
+#  accessModes:
+#    - ReadWriteOnce
+#  storageClassName: manual
+#  resources:
+#    requests:
+#      storage: 10Gi
 
 ---
 apiVersion: apps/v1

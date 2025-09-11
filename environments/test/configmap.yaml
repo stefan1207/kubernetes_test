@@ -4,3 +4,6 @@ metadata:
   name: environment-config
 data:
   ENVIRONMENT: "test"
+  POSTGRES_DB: demo_db_test
+  POSTGRES_USER: ps_user
+  POSTGRES_PASSWORD: 7vukoB14s$9mOhGfy1Qj

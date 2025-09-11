@@ -1,5 +1,5 @@
-kind: PersistentVolume
 apiVersion: v1
+kind: PersistentVolume
 metadata:
   name: postgres-pv
   labels:
@@ -24,6 +24,7 @@ metadata:
   labels:
     app: postgres
 spec:
+  volumeName: postgres-pv
   storageClassName: manual
   accessModes:
     - ReadWriteOnce

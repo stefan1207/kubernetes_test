@@ -1,12 +1,14 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: postgres-pv-volume
+  name: postgres-pv
   labels:
     type: local
     app: postgres
 spec:
   storageClassName: manual
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 10Gi
   accessModes:

@@ -24,7 +24,6 @@ metadata:
   labels:
     app: postgres
 spec:
-  volumeName: postgres-pv
   storageClassName: manual
   accessModes:
     - ReadWriteOnce

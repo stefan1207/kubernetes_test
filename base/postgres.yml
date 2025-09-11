@@ -29,6 +29,7 @@ spec:
       app: postgres
   accessModes:
     - ReadWriteOnce
+  storageClassName: manual
   resources:
     requests:
       storage: 10Gi

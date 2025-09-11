@@ -55,7 +55,7 @@ spec:
           imagePullPolicy: "IfNotPresent"
           envFrom:
             - configMapRef:
-              name: environment-config
+                name: environment-config
           volumeMounts:
             - name: postgres-data
               mountPath: /var/lib/postgresql/data

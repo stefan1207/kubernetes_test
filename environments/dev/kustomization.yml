@@ -14,6 +14,7 @@ labels:
 #    newTag: '0.9.70'
 
 patches:
+  # use different context for each env
   - target:
       kind: Ingress
       name: demo-ingress
@@ -21,3 +22,11 @@ patches:
       - op: replace
         path: /spec/rules/0/http/paths/0/path
         value: /demo-dev
+  # volume for postgres depends on env
+  - target:
+      kind: StatefulSet
+      name: postgres
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/volumeMounts/0/name
+        value: dev-postgres-pvc

@@ -17,22 +17,22 @@ spec:
     path: "/mnt/data"
 
 ---
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: postgres-pvc
-#  labels:
-#    app: postgres
-#spec:
-#  selector:
-#    matchLabels:
-#      app: postgres
-#  accessModes:
-#    - ReadWriteOnce
-#  storageClassName: manual
-#  resources:
-#    requests:
-#      storage: 10Gi
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  labels:
+    app: postgres
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 10Gi
 
 ---
 apiVersion: apps/v1
@@ -58,17 +58,9 @@ spec:
             - configMapRef:
                 name: environment-config
           volumeMounts:
-            - name: postgres-data
-              mountPath: /var/lib/postgresql/data
-  volumeClaimTemplates:
-    - metadata:
-        name: postgres-data
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: manual
-        resources:
-          requests:
-            storage: 10Gi
+            - mountPath: "/var/lib/postgresql/data"
+              name: postgres-pvc
+
 ---
 apiVersion: v1
 kind: Service

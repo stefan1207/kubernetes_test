@@ -23,10 +23,10 @@ patches:
         path: /spec/rules/0/http/paths/0/path
         value: /demo-dev
   # volume for postgres depends on env
-  - target:
-      kind: StatefulSet
-      name: postgres
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/volumeMounts/0/name
-        value: dev-postgres-pvc
+#  - target:
+#      kind: StatefulSet
+#      name: postgres
+#    patch: |-
+#      - op: replace
+#        path: /spec/template/spec/containers/0/volumeMounts/0/name
+#        value: dev-postgres-pvc
